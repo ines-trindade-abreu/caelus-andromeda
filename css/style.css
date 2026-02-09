@@ -2,17 +2,7 @@
    CAELUS ANDROMEDA, LDA.
    Main Stylesheet
    ========================================
-   Contents:
-   1. CSS Variables (Theme System)
-   2. Reset & Base Styles
-   3. Top Bar (Toggle, Mottos, Language Switch)
-   4. Navigation Bar
-   5. Hero Section
-   6. Feature Cards
-   7. Content Sections
-   8. Footer
-   9. Animations
-   10. Responsive Design
+   Brand Color: #1C8753 (Emerald Green from logo)
    ======================================== */
 
 
@@ -28,10 +18,10 @@
   --text-primary: #1a1a1a;
   --text-secondary: #6c757d;
   
-  /* Brand Colors */
-  --viridian: #408F8F;
-  --viridian-dark: #2e6b6b;
-  --viridian-light: #60b1b1;
+  /* Brand Colors - YOUR LOGO GREEN */
+  --viridian: #1C8753;
+  --viridian-dark: #166c42;
+  --viridian-light: #21a263;
   
   /* UI Elements */
   --border-color: #e9ecef;
@@ -49,8 +39,8 @@
   --bg-secondary: #2d2d2d;
   --text-primary: #f8f9fa;
   --text-secondary: #adb5bd;
-  --viridian: #60b1b1;
-  --viridian-dark: #408F8F;
+  --viridian: #21a263;
+  --viridian-dark: #1C8753;
   --border-color: #495057;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.4);
@@ -90,7 +80,6 @@ ul {
    3. TOP BAR SECTION
    ======================================== */
 
-/* ----- Top Bar Container ----- */
 .top-bar {
   background: var(--viridian);
   color: #ffffff;
@@ -102,7 +91,7 @@ ul {
 
 .top-bar-content {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr; /* Left (toggle) | Center (motto) | Right (controls) */
+  grid-template-columns: 1fr 2fr 1fr;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -110,7 +99,7 @@ ul {
   gap: 20px;
 }
 
-/* ----- iOS-Style Theme Toggle (Left) ----- */
+/* iOS Toggle */
 .theme-toggle-container {
   display: flex;
   align-items: center;
@@ -157,8 +146,8 @@ ul {
 }
 
 input:checked + .toggle-slider {
-  background-color: rgba(96, 177, 177, 0.6);
-  border-color: rgba(96, 177, 177, 0.8);
+  background-color: rgba(33, 162, 99, 0.6);
+  border-color: rgba(33, 162, 99, 0.8);
 }
 
 input:checked + .toggle-slider::before {
@@ -170,10 +159,10 @@ input:checked + .toggle-slider::before {
 }
 
 input:checked + .toggle-slider:hover {
-  background-color: rgba(96, 177, 177, 0.7);
+  background-color: rgba(33, 162, 99, 0.7);
 }
 
-/* ----- Alternating Mottos (Center) ----- */
+/* Alternating Text */
 .alternating-text {
   text-align: center;
   justify-self: center;
@@ -184,7 +173,7 @@ input:checked + .toggle-slider:hover {
   display: inline-block;
 }
 
-/* ----- Right Controls (Language + Contact Icons) ----- */
+/* Top Right Controls */
 .top-right {
   display: flex;
   align-items: center;
@@ -261,7 +250,6 @@ input:checked + .toggle-slider:hover {
   padding: 0 20px;
 }
 
-/* ----- Logo ----- */
 .logo {
   transition: var(--transition-fast);
 }
@@ -277,7 +265,6 @@ input:checked + .toggle-slider:hover {
   font-weight: 600;
 }
 
-/* ----- Navigation Links ----- */
 .nav-links {
   display: flex;
   gap: 30px;
@@ -350,11 +337,7 @@ input:checked + .toggle-slider:hover {
   align-items: center;
   text-align: center;
   color: #ffffff;
-  background: linear-gradient(
-    135deg,
-    rgba(64, 143, 143, 0.7),
-    rgba(46, 107, 107, 0.7)
-  );
+  background: linear-gradient(135deg, rgba(28, 135, 83, 0.75), rgba(22, 108, 66, 0.75));
   padding: 20px;
 }
 
@@ -374,7 +357,6 @@ input:checked + .toggle-slider:hover {
   line-height: 1.5;
 }
 
-/* ----- CTA Button ----- */
 .cta-button {
   background: var(--bg-primary);
   color: var(--viridian);
@@ -390,6 +372,12 @@ input:checked + .toggle-slider:hover {
 .cta-button:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
+}
+
+.hero-services,
+.hero-contact {
+  height: 50vh;
+  min-height: 400px;
 }
 
 
@@ -424,6 +412,7 @@ input:checked + .toggle-slider:hover {
 .feature-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-hover);
+  border-top-color: var(--viridian);
 }
 
 .card-icon {
@@ -472,20 +461,11 @@ input:checked + .toggle-slider:hover {
   text-align: center;
 }
 
-/* Page-specific content sections */
-.home-content {
-  /* Add home-specific styles here if needed */
-}
-
-.about-page-content {   
-  /* Add about page-specific styles here if needed */
-}
 
 /* ========================================
-   SERVICES PAGE STYLES
+   8. SERVICES PAGE STYLES
    ======================================== */
 
-/* ----- Services Intro ----- */
 .services-intro {
   text-align: center;
   max-width: 700px;
@@ -506,7 +486,6 @@ input:checked + .toggle-slider:hover {
   line-height: 1.7;
 }
 
-/* ----- Service Detail Cards Grid ----- */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -522,6 +501,7 @@ input:checked + .toggle-slider:hover {
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  box-shadow: var(--shadow);
 }
 
 .service-detail-card:hover {
@@ -530,7 +510,6 @@ input:checked + .toggle-slider:hover {
   border-color: var(--viridian);
 }
 
-/* Service Header */
 .service-header {
   text-align: center;
   margin-bottom: 20px;
@@ -557,7 +536,6 @@ input:checked + .toggle-slider:hover {
   text-align: center;
 }
 
-/* Service List */
 .service-list {
   list-style: none;
   margin: 0 0 25px 0;
@@ -568,11 +546,12 @@ input:checked + .toggle-slider:hover {
 .service-list li {
   color: var(--text-secondary);
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.8;
   margin-bottom: 12px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  text-align: left;
 }
 
 .service-list li i {
@@ -582,7 +561,6 @@ input:checked + .toggle-slider:hover {
   flex-shrink: 0;
 }
 
-/* Service CTA */
 .service-cta {
   display: inline-block;
   text-align: center;
@@ -599,14 +577,13 @@ input:checked + .toggle-slider:hover {
 .service-cta:hover {
   background: var(--viridian-dark);
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(64, 143, 143, 0.3);
+  box-shadow: 0 4px 8px rgba(28, 135, 83, 0.3);
 }
 
-/* ----- Process Section ----- */
 .services-process {
   background: var(--bg-secondary);
   padding: 60px 20px;
-  margin: 80px -20px 60px;
+  margin: 80px 0 60px;
   border-radius: 10px;
 }
 
@@ -659,12 +636,11 @@ input:checked + .toggle-slider:hover {
   line-height: 1.6;
 }
 
-/* ----- Services CTA Section ----- */
 .services-cta-section {
   background: linear-gradient(135deg, var(--viridian), var(--viridian-dark));
   color: #ffffff;
   padding: 60px 30px;
-  margin: 80px -20px 0;
+  margin: 80px 0 0;
   border-radius: 10px;
   text-align: center;
 }
@@ -703,34 +679,11 @@ input:checked + .toggle-slider:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* ----- Hero Variant for Services ----- */
-.hero-services {
-  height: 50vh;
-  min-height: 400px;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  
-  .process-steps {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-  
-  .services-cta-section {
-    padding: 50px 20px;
-  }
-}
 
 /* ========================================
-   CONTACT PAGE STYLES
+   9. CONTACT PAGE STYLES
    ======================================== */
 
-/* ----- Contact Intro ----- */
 .contact-intro {
   text-align: center;
   max-width: 700px;
@@ -751,7 +704,6 @@ input:checked + .toggle-slider:hover {
   line-height: 1.7;
 }
 
-/* ----- Contact Grid Layout ----- */
 .contact-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -760,12 +712,12 @@ input:checked + .toggle-slider:hover {
   align-items: start;
 }
 
-/* ----- Contact Form ----- */
 .contact-form-container {
   background: var(--bg-secondary);
   padding: 40px;
   border-radius: 10px;
   border: 2px solid var(--border-color);
+  box-shadow: var(--shadow);
 }
 
 .contact-form-container h3 {
@@ -811,7 +763,7 @@ input:checked + .toggle-slider:hover {
 .form-group textarea:focus {
   outline: none;
   border-color: var(--viridian);
-  box-shadow: 0 0 0 3px rgba(64, 143, 143, 0.1);
+  box-shadow: 0 0 0 3px rgba(28, 135, 83, 0.1);
 }
 
 .form-group textarea {
@@ -835,7 +787,7 @@ input:checked + .toggle-slider:hover {
 .submit-button:hover {
   background: var(--viridian-dark);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(64, 143, 143, 0.3);
+  box-shadow: 0 4px 12px rgba(28, 135, 83, 0.3);
 }
 
 .form-note {
@@ -845,7 +797,6 @@ input:checked + .toggle-slider:hover {
   margin-top: 10px;
 }
 
-/* ----- Contact Info Sidebar ----- */
 .contact-info-sidebar {
   display: flex;
   flex-direction: column;
@@ -868,11 +819,12 @@ input:checked + .toggle-slider:hover {
   gap: 20px;
   align-items: flex-start;
   transition: var(--transition);
+  box-shadow: var(--shadow);
 }
 
 .info-card:hover {
   border-color: var(--viridian);
-  box-shadow: var(--shadow);
+  transform: translateY(-3px);
 }
 
 .info-icon {
@@ -913,7 +865,6 @@ input:checked + .toggle-slider:hover {
 
 .info-note {
   font-size: 13px !important;
-  color: var(--text-secondary) !important;
   font-style: italic;
 }
 
@@ -924,12 +875,12 @@ input:checked + .toggle-slider:hover {
   font-weight: 600;
 }
 
-/* ----- Office Hours ----- */
 .office-hours {
   background: var(--bg-secondary);
   border: 2px solid var(--border-color);
   border-radius: 8px;
   padding: 25px;
+  box-shadow: var(--shadow);
 }
 
 .office-hours h4 {
@@ -940,8 +891,6 @@ input:checked + .toggle-slider:hover {
 }
 
 .office-hours ul {
-  list-style: none;
-  padding: 0;
   margin: 0 0 15px 0;
 }
 
@@ -970,7 +919,6 @@ input:checked + .toggle-slider:hover {
   margin-top: 10px;
 }
 
-/* ----- Map Section ----- */
 .map-section {
   margin: 80px 0 60px;
 }
@@ -989,57 +937,9 @@ input:checked + .toggle-slider:hover {
   box-shadow: var(--shadow);
 }
 
-/* ----- Hero Variant for Contact ----- */
-.hero-contact {
-  height: 45vh;
-  min-height: 350px;
-}
-
-/* ----- Responsive Design ----- */
-@media (max-width: 968px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .contact-form-container {
-    padding: 30px 25px;
-  }
-  
-  .info-card {
-    padding: 20px;
-  }
-  
-  .map-placeholder iframe {
-    height: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-form-container,
-  .info-card,
-  .office-hours {
-    padding: 20px;
-  }
-  
-  .info-card {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .office-hours li {
-    flex-direction: column;
-    gap: 5px;
-    text-align: center;
-  }
-}
-
-
 
 /* ========================================
-   8. FOOTER
+   10. FOOTER
    ======================================== */
 
 .footer {
@@ -1058,38 +958,20 @@ input:checked + .toggle-slider:hover {
 
 
 /* ========================================
-   9. ANIMATIONS
+   11. RESPONSIVE DESIGN
    ======================================== */
 
-@keyframes fadeInOut {
-  0%, 10% {
-    opacity: 1;
-  }
-  45%, 55% {
-    opacity: 0;
-  }
-  90%, 100% {
-    opacity: 1;
+@media (max-width: 968px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 }
 
-/* Apply fade animation to motto texts if needed */
-.alternating-text.animated span {
-  animation: fadeInOut 5s infinite;
-}
-
-
-/* ========================================
-   10. RESPONSIVE DESIGN
-   ======================================== */
-
-/* ----- Tablet (768px and below) ----- */
 @media (max-width: 768px) {
-  /* Top Bar */
   .top-bar-content {
     grid-template-columns: 1fr;
     gap: 12px;
-    text-align: center;
   }
   
   .theme-toggle-container,
@@ -1103,7 +985,6 @@ input:checked + .toggle-slider:hover {
     justify-content: center;
   }
 
-  /* Navigation */
   .navbar-content {
     flex-direction: column;
     gap: 15px;
@@ -1115,57 +996,40 @@ input:checked + .toggle-slider:hover {
     justify-content: center;
   }
 
-  /* Hero */
   .hero {
     height: 60vh;
     min-height: 400px;
   }
-  
-  .hero-overlay {
-    padding: 30px 20px;
-  }
 
-  /* Features */
-  .features {
+  .features,
+  .services-grid {
     grid-template-columns: 1fr;
     gap: 25px;
-    margin: 50px 0;
   }
 
-  /* Content Sections */
   .content-section {
     padding: 40px 15px;
   }
+  
+  .contact-form-container {
+    padding: 30px 25px;
+  }
+  
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
 }
 
-/* ----- Mobile (480px and below) ----- */
 @media (max-width: 480px) {
-  /* Top Bar */
   .top-bar {
     font-size: 13px;
     padding: 10px 0;
   }
-  
-  .contact-icons {
-    gap: 12px;
-  }
-  
-  .contact-icons a {
-    font-size: 16px;
-  }
 
-  /* Navigation */
   .logo h2 {
     font-size: 20px;
   }
-  
-  .nav-links {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
 
-  /* Hero */
   .hero {
     height: 50vh;
     min-height: 350px;
@@ -1176,41 +1040,20 @@ input:checked + .toggle-slider:hover {
     font-size: 15px;
   }
 
-  /* Feature Cards */
-  .feature-card {
+  .feature-card,
+  .service-detail-card {
     padding: 25px 20px;
   }
   
-  .card-icon {
-    font-size: 40px;
-  }
-
-  /* Content */
-  .content-section h2 {
-    font-size: 26px;
+  .contact-form-container,
+  .info-card,
+  .office-hours {
+    padding: 20px;
   }
   
-  .content-section p {
-    font-size: 15px;
+  .info-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
-
-/* ----- Print Styles (Bonus) ----- */
-@media print {
-  .top-bar,
-  .navbar,
-  .cta-button,
-  .footer {
-    display: none;
-  }
-  
-  body {
-    background: white;
-    color: black;
-  }
-}
-
-
-/* ========================================
-   END OF STYLESHEET
-   ======================================== */
