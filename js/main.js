@@ -20,6 +20,14 @@ const STORAGE_KEYS = {
   THEME: 'theme'
 };
 
+// CENTRALIZED LINKS
+const COMPANY_INFO = {
+  phone: '+351214151214',
+  mobile: '+351966602678',
+  email: 'caelusandromeda@gmail.com',
+  mapsLink: 'https://maps.app.goo.gl/MhhzdSZYgxiADB7d9'  // PUT YOUR GOOGLE MAPS LINK HERE
+};
+
 // ========================================
 // 2. TRANSLATIONS DATABASE
 // ========================================
@@ -494,11 +502,28 @@ function initSystemThemeListener() {
 /**
  * Updates the displayed motto based on current index
  */
+
+// Alternating Mottos (2 per language) - SMOOTH FADE VERSION
 function updateMottoDisplay() {
-  document.querySelectorAll('.motto-text').forEach((text, i) => {
-    text.style.display = i === mottoIndex ? 'inline' : 'none';
+  const mottos = document.querySelectorAll('.motto-text');
+  mottos.forEach((text, i) => {
+    if (i === mottoIndex) {
+      text.style.display = 'inline';
+      // Trigger fade in
+      setTimeout(() => {
+        text.style.opacity = '1';
+      }, 10);
+    } else {
+      // Fade out first
+      text.style.opacity = '0';
+      // Then hide after fade completes
+      setTimeout(() => {
+        text.style.display = 'none';
+      }, 500);  // Match CSS transition time
+    }
   });
 }
+
 
 /**
  * Cycles to the next motto (toggles between 0 and 1)
@@ -549,7 +574,35 @@ function initThemeToggle() {
 }
 
 // ========================================
-// 9. INITIALIZATION
+// 9. CONTACT LINKS UPDATE
+// ========================================
+
+/**
+ * Updates all contact links from centralized config
+ */
+function updateContactLinks() {
+  // Update all map links
+  document.querySelectorAll('a[aria-label="Map"]').forEach(link => {
+    link.href = COMPANY_INFO.mapsLink;
+  });
+  
+  // Update phone links (optional - in case you change numbers)
+  document.querySelectorAll('a[href^="tel:+351214"]').forEach(link => {
+    link.href = `tel:${COMPANY_INFO.phone}`;
+  });
+  
+  document.querySelectorAll('a[href^="tel:+351966"]').forEach(link => {
+    link.href = `tel:${COMPANY_INFO.mobile}`;
+  });
+  
+  // Update email links
+  document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+    link.href = `mailto:${COMPANY_INFO.email}`;
+  });
+}
+
+// ========================================
+// 10. INITIALIZATION
 // ========================================
 
 /**
@@ -565,7 +618,11 @@ function init() {
   initSmoothScrolling();
   initThemeToggle();
   initSystemThemeListener();
+  
+  // UPDATE CENTRALIZED LINKS
+  updateContactLinks();  // ADD THIS LINE
 }
+
 
 // Run initialization when DOM is ready
 document.addEventListener('DOMContentLoaded', init);
