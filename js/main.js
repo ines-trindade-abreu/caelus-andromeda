@@ -54,6 +54,12 @@ const translations = {
     card3Text: "Integrate new technologies in our practice to modernize and individualize the approach.",
     card4Title: "Trusted Partner",
     card4Text: "Reliable, transparent partnerships built on integrity and proven track record.",
+        // Additional Cards (Index)
+    card5Title: "Personalized Service",
+    card5Text: "Every client is unique. We tailor our approach to your specific needs, goals, and industry challenges.",
+    card6Title: "Regulatory Compliance",
+    card6Text: "Stay ahead of regulatory changes and ensure full compliance with Portuguese and EU financial requirements.",
+
     
     // About Section
     aboutTitle: "About Us",
@@ -131,6 +137,25 @@ const translations = {
     service4Item4: "International tax advisory",
     service4Item5: "Tax dispute resolution and representation",
 
+        // Service 5 - Financial Planning
+    service5Title: "Financial Planning & Analysis",
+    service5Desc: "Strategic financial planning and performance analysis to help you make informed decisions and achieve your business objectives.",
+    service5Item1: "Long-term financial planning and forecasting",
+    service5Item2: "Budgeting and variance analysis",
+    service5Item3: "KPI development and performance tracking",
+    service5Item4: "Investment analysis and ROI assessment",
+    service5Item5: "Scenario modeling and sensitivity analysis",
+
+    // Service 6 - Business Formation
+    service6Title: "Business Formation & Setup",
+    service6Desc: "Expert guidance for entrepreneurs and businesses establishing or restructuring operations in Portugal.",
+    service6Item1: "Company registration and legal structure advisory",
+    service6Item2: "Business license and permit assistance",
+    service6Item3: "Startup financial planning and setup",
+    service6Item4: "Corporate restructuring advisory",
+    service6Item5: "Non-resident entrepreneur support",
+
+
     // Shared
     serviceLearnMore: "Learn More",
 
@@ -171,6 +196,8 @@ const translations = {
     formSelectAuditing: "Auditing",
     formSelectConsulting: "Consulting",
     formSelectTax: "Tax Services",
+    formSelectFinancial: "Financial Planning & Analysis",
+    formSelectFormation: "Business Formation & Setup",
     formSelectOther: "Other",
     formLabelMessage: "Message *",
     formSubmitButton: "Send Message",
@@ -228,6 +255,11 @@ const translations = {
     card3Text: "Integração de novas tecnologias para modernizar e individualizar a abordagem.",
     card4Title: "Parceiro Confiável",
     card4Text: "Parcerias confiáveis e transparentes construídas sobre integridade e histórico comprovado.",
+    card5Title: "Serviço Personalizado",
+    card5Text: "Cada cliente é único. Adaptamos a nossa abordagem às suas necessidades específicas, objetivos e desafios do setor.",
+    card6Title: "Conformidade Regulatória",
+    card6Text: "Mantenha-se à frente das mudanças regulatórias e garanta total conformidade com os requisitos financeiros portugueses e da UE.",
+
     
     // About Section
     aboutTitle: "Sobre Nós",
@@ -299,6 +331,25 @@ const translations = {
     service4Item4: "Assessoria fiscal internacional",
     service4Item5: "Resolução de litígios fiscais e representação",
 
+        // Service 5 - Financial Planning
+    service5Title: "Planeamento e Análise Financeira",
+    service5Desc: "Planeamento financeiro estratégico e análise de desempenho para o ajudar a tomar decisões informadas e alcançar os seus objetivos empresariais.",
+    service5Item1: "Planeamento financeiro de longo prazo e previsão",
+    service5Item2: "Orçamentação e análise de variações",
+    service5Item3: "Desenvolvimento de KPIs e acompanhamento de desempenho",
+    service5Item4: "Análise de investimentos e avaliação de ROI",
+    service5Item5: "Modelagem de cenários e análise de sensibilidade",
+
+    // Service 6 - Business Formation
+    service6Title: "Formação e Constituição de Empresas",
+    service6Desc: "Orientação especializada para empresários e empresas a estabelecer ou reestruturar operações em Portugal.",
+    service6Item1: "Registo de empresas e assessoria de estrutura legal",
+    service6Item2: "Assistência com licenças e autorizações empresariais",
+    service6Item3: "Planeamento financeiro e constituição de startups",
+    service6Item4: "Assessoria de reestruturação corporativa",
+    service6Item5: "Apoio a empresários não residentes",
+
+
     serviceLearnMore: "Saiba Mais",
 
     processTitle: "O Nosso Processo",
@@ -333,6 +384,8 @@ const translations = {
     formSelectAuditing: "Auditoria",
     formSelectConsulting: "Consultoria",
     formSelectTax: "Serviços Fiscais",
+    formSelectFinancial: "Planeamento e Análise Financeira",
+    formSelectFormation: "Formação e Constituição de Empresas",
     formSelectOther: "Outro",
     formLabelMessage: "Mensagem *",
     formSubmitButton: "Enviar Mensagem",
