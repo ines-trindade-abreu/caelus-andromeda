@@ -1,43 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Firm - Caelus Andromeda, Lda.</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
-</head>
-<body>
-    <!-- Top Bar: Toggle (left), Alternating Text (center), Controls (right) -->
+<!-- Language Switcher in Top Bar -->
     <div class="top-bar">
         <div class="top-bar-content">
-            <!-- iOS-Style Dark Mode Toggle (Left) -->
-            <div class="theme-toggle-container">
-                <label class="toggle-switch" for="theme-toggle-checkbox">
-                    <input type="checkbox" id="theme-toggle-checkbox">
-                    <span class="toggle-slider"></span>
-                </label>
+            <div class="alternating-text" id="alternatingText">
+                <span class="text-a" lang="en">Location: Lisbon Metropolitan Area, Portugal</span>
+                <span class="text-b" lang="pt" style="display: none;">Localização: Área Metropolitana de Lisboa, Portugal</span>
             </div>
-
-            <!-- Alternating Text (Center) -->
-            <div class="alternating-text">
-                <span class="motto-text" data-i18n="motto1"></span>
-                <span class="motto-text" data-i18n="motto2" style="display:none;"></span>
-            </div>
-
-            <!-- Right Controls: Lang + Icons -->
             <div class="top-right">
                 <div class="language-switcher">
-                    <button id="lang-en" class="lang-btn active" onclick="switchLang('en')">EN</button>
+                    <button id="lang-en" class="lang-btn active" data-lang="en">EN</button>
                     <span class="lang-divider">|</span>
-                    <button id="lang-pt" class="lang-btn" onclick="switchLang('pt')">PT</button>
+                    <button id="lang-pt" class="lang-btn" data-lang="pt">PT</button>
                 </div>
                 <div class="contact-icons">
-                    <a href="tel:+351214151214" title="Phone" aria-label="Phone"><i class="fas fa-phone"></i></a>
-                    <a href="mailto:caelusandromeda@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://maps.google.com/?q=Lisbon+Metropolitan+Area+Portugal" target="_blank" title="Location" aria-label="Map"><i class="fas fa-map-marker-alt"></i></a>
+                    <a href="mailto:caelusandromeda@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+214151214" title="Phone"><i class="fas fa-phone"></i></a>
                 </div>
             </div>
         </div>
@@ -46,82 +22,107 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="navbar-content">
-            <a href="index.html" class="logo">
-                <h2>Caelus Andromeda</h2>
-            </a>
+            <div class="logo">
+                <h2>YourLogo</h2>
+            </div>
             <ul class="nav-links">
-                <li><a href="about.html" data-i18n="navFirm" class="active">The Firm</a></li>
-                <li><a href="services.html" data-i18n="navServices">Services</a></li>
-                <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
+                <li><a href="index.html" lang="en">Page 1</a><a href="index.html" lang="pt" style="display: none;">Página 1</a></li>
+                <li><a href="page2.html" lang="en">Page 2</a><a href="page2.html" lang="pt" style="display: none;">Página 2</a></li>
+                <li><a href="page3.html" lang="en">Page 3</a><a href="page3.html" lang="pt" style="display: none;">Página 3</a></li>
+                <li><a href="page4.html" lang="en">Page 4</a><a href="page4.html" lang="pt" style="display: none;">Página 4</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <img src="images/hero-bg.jpg" alt="The Firm Background" class="hero-bg">
+        <img src="images/hero-bg.jpg" alt="Hero Background" class="hero-bg">
         <div class="hero-overlay">
-            <h1 data-i18n="aboutHeroTitle">About Caelus Andromeda</h1>
-            <p data-i18n="aboutHeroSubtitle">Three decades of financial expertise at your service</p>
+            <h1 lang="en">Build Your Future With Us</h1>
+            <h1 lang="pt" style="display: none;">Construa Seu Futuro Conosco</h1>
+            
+            <p lang="en">Strategic insights and innovative solutions for your business</p>
+            <p lang="pt" style="display: none;">Insights estratégicos e soluções inovadoras para seu negócio</p>
+            
+            <a href="page2.html" class="cta-button">
+                <span lang="en">Get Started</span>
+                <span lang="pt" style="display: none;">Começar</span>
+            </a>
         </div>
     </section>
 
     <!-- Main Content -->
     <main class="main-container">
-        <!-- About Section -->
-        <section class="content-section about-page-content">
-            <h2 data-i18n="aboutFirmTitle">The Firm</h2>
-            <p data-i18n="aboutFirmP1">Caelus Andromeda, Lda. was founded with a vision to provide exceptional accounting, auditing, consulting, and tax services to businesses in the Lisbon Metropolitan Area and beyond.</p>
-            <p data-i18n="aboutFirmP2">With over 30 years of combined experience, our firm has built a reputation for integrity, precision, and innovation in financial services.</p>
-            <p data-i18n="aboutFirmP3">We combine traditional financial expertise with modern technology to deliver tailored solutions that meet the evolving needs of our clients in today's competitive business environment.</p>
-        </section>
-
-        <!-- Team/Values Cards -->
+        <!-- Feature Cards -->
         <section class="features">
             <div class="feature-card">
                 <div class="card-icon">
-                    <i class="fas fa-user-tie"></i>
+                    <i class="fas fa-briefcase"></i>
                 </div>
-                <h3 data-i18n="aboutCard1Title">Our Expertise</h3>
-                <p data-i18n="aboutCard1Text">Led by experienced accountants, economists, and financial auditors with extensive industry knowledge and professional certifications.</p>
+                <h3 lang="en">Professional Services</h3>
+                <h3 lang="pt" style="display: none;">Serviços Profissionais</h3>
+                
+                <p lang="en">Expert consultants with years of industry experience ready to help your business grow.</p>
+                <p lang="pt" style="display: none;">Consultores especialistas com anos de experiência pronta para ajudar seu negócio crescer.</p>
             </div>
 
             <div class="feature-card">
                 <div class="card-icon">
-                    <i class="fas fa-handshake"></i>
+                    <i class="fas fa-chart-line"></i>
                 </div>
-                <h3 data-i18n="aboutCard2Title">Our Values</h3>
-                <p data-i18n="aboutCard2Text">Integrity, transparency, and client-focused service guide everything we do, ensuring trusted partnerships built to last.</p>
+                <h3 lang="en">Data-Driven Strategy</h3>
+                <h3 lang="pt" style="display: none;">Estratégia Baseada em Dados</h3>
+                
+                <p lang="en">Leverage analytics and insights to make informed decisions that drive results.</p>
+                <p lang="pt" style="display: none;">Aproveite análises e insights para tomar decisões que impulsionem resultados.</p>
             </div>
 
             <div class="feature-card">
                 <div class="card-icon">
-                    <i class="fas fa-lightbulb"></i>
+                    <i class="fas fa-users"></i>
                 </div>
-                <h3 data-i18n="aboutCard3Title">Our Approach</h3>
-                <p data-i18n="aboutCard3Text">Combining proven financial methodologies with innovative technologies to deliver modern, efficient, and personalized solutions.</p>
+                <h3 lang="en">Dedicated Team</h3>
+                <h3 lang="pt" style="display: none;">Equipe Dedicada</h3>
+                
+                <p lang="en">Our talented team is committed to understanding your needs and delivering excellence.</p>
+                <p lang="pt" style="display: none;">Nossa equipe talentosa está comprometida em compreender suas necessidades e entregar excelência.</p>
             </div>
 
             <div class="feature-card">
                 <div class="card-icon">
-                    <i class="fas fa-chart-pie"></i>
+                    <i class="fas fa-shield-alt"></i>
                 </div>
-                <h3 data-i18n="aboutCard4Title">Our Commitment</h3>
-                <p data-i18n="aboutCard4Text">Dedicated to understanding each client's unique needs and delivering measurable results that drive sustainable growth.</p>
+                <h3 lang="en">Trusted Partner</h3>
+                <h3 lang="pt" style="display: none;">Parceiro Confiável</h3>
+                
+                <p lang="en">Reliable, transparent partnerships built on integrity and proven track record.</p>
+                <p lang="pt" style="display: none;">Parcerias confiáveis e transparentes construídas sobre integridade e histórico comprovado.</p>
             </div>
         </section>
 
-        <!-- Why Choose Us Section -->
-        <section class="content-section about-page-content">
-            <h2 data-i18n="aboutWhyTitle">Why Choose Us</h2>
-            <p data-i18n="aboutWhyP1">In a rapidly changing financial landscape, businesses need partners who understand both traditional practices and emerging trends. Our team stays ahead of regulatory changes and technological innovations to provide you with cutting-edge advice.</p>
-            <p data-i18n="aboutWhyP2">Whether you're a startup navigating your first fiscal year or an established enterprise optimizing complex financial structures, we bring the expertise, dedication, and strategic insight to help you succeed.</p>
+        <!-- About Section -->
+        <section class="content-section home-content">
+            <h2 lang="en">About Us</h2>
+            <h2 lang="pt" style="display: none;">Sobre Nós</h2>
+            
+            <p lang="en">Welcome to our company. We specialize in providing innovative solutions that help businesses thrive in today's competitive landscape.</p>
+            <p lang="pt" style="display: none;">Bem-vindo à nossa empresa. Especializamo-nos em fornecer soluções inovadoras que ajudam os negócios a prosperar no cenário competitivo atual.</p>
+            
+            <p lang="en">With over 40 years of combined expertise, our team is dedicated to delivering exceptional results and building long-term partnerships.</p>
+            <p lang="pt" style="display: none;">Com mais de 40 anos de experiência combinada, nossa equipe está dedicada a entregar resultados excepcionais e construir parcerias de longo prazo.</p>
         </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <p data-i18n="copyright">© 2026 Caelus Andromeda, Lda. All rights reserved.</p>
+        <p lang="en">&copy; 2026 Your Company Name. All rights reserved.</p>
+        <p lang="pt" style="display: none;">&copy; 2026 Nome da Sua Empresa. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Language Switcher JavaScript -->
+    <script src="js/language-switcher.js"></script>
+    <!-- Alternating Text -->
+    <script src="js/alternating-text.js"></script>
+
 </body>
 </html>
